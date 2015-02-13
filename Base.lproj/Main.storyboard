@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yuZ-tK-vvl">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Baseball Card Search-->
+        <scene sceneID="DzV-F8-TVN">
+            <objects>
+                <tableViewController id="r68-Rl-Feg" customClass="BaseballCardSearchTableViewController" customModule="UIBaseballCardSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="URt-Ma-HYn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="H4k-YT-GDH">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="r68-Rl-Feg" id="pql-8V-NcI"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="p5u-6d-a5j">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p5u-6d-a5j" id="tGw-Ye-nuC">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="r68-Rl-Feg" id="PIy-yN-OFv"/>
+                            <outlet property="delegate" destination="r68-Rl-Feg" id="2fd-WD-q30"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Baseball Card Search" id="V9C-nT-1Pf"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="QN6-39-Yo1" id="BZR-hh-l28"/>
+                        <segue destination="mXg-rC-xDl" kind="show" identifier="baseballCardDetail" id="VuV-rF-Mmr"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gEU-Wk-dru" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="QN6-39-Yo1">
+                    <connections>
+                        <outlet property="delegate" destination="r68-Rl-Feg" id="vZX-iO-OVt"/>
+                        <outlet property="searchBar" destination="H4k-YT-GDH" id="BOQ-Mg-chq"/>
+                        <outlet property="searchContentsController" destination="r68-Rl-Feg" id="jdb-uk-qDn"/>
+                        <outlet property="searchResultsDataSource" destination="r68-Rl-Feg" id="itM-az-1Y3"/>
+                        <outlet property="searchResultsDelegate" destination="r68-Rl-Feg" id="gcN-Iq-HG7"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="690" y="468"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0ar-K0-2bW">
+            <objects>
+                <viewController id="mXg-rC-xDl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fbg-qI-Yc4"/>
+                        <viewControllerLayoutGuide type="bottom" id="6mc-XR-awX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z5s-Pe-IsZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="juT-aA-lmQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1476" y="468"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JaM-bW-ibI">
+            <objects>
+                <navigationController id="yuZ-tK-vvl" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yAi-ba-9OO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="r68-Rl-Feg" kind="relationship" relationship="rootViewController" id="azJ-HJ-cQb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TvI-n9-u0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-130" y="468"/>
+        </scene>
+    </scenes>
+</document>
